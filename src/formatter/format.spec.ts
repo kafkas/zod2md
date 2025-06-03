@@ -181,6 +181,7 @@ describe("format models from Zod as Markdown document", () => {
                       required: true,
                       model: {
                         type: "string",
+                        description: "Street name",
                       },
                     },
                     {
@@ -189,10 +190,53 @@ describe("format models from Zod as Markdown document", () => {
                       required: true,
                       model: {
                         type: "string",
+                        description: "City name",
+                      },
+                    },
+                    {
+                      kind: "model",
+                      key: "zip",
+                      required: false,
+                      model: {
+                        type: "string",
+                        description: "Zip code",
+                      },
+                    },
+                    {
+                      kind: "model",
+                      key: "state",
+                      required: false,
+                      model: {
+                        type: "string",
+                        description: "State name",
                       },
                     },
                   ],
                   description: "Person's address",
+                },
+              },
+              {
+                kind: "model",
+                key: "nickname",
+                required: false,
+                model: {
+                  type: "string",
+                  description: "Optional nickname",
+                },
+              },
+              {
+                kind: "model",
+                key: "hobbies",
+                required: false,
+                model: {
+                  type: "array",
+                  items: {
+                    kind: "model",
+                    model: {
+                      type: "string",
+                    },
+                  },
+                  description: "List of hobbies",
                 },
               },
             ],
